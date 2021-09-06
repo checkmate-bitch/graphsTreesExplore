@@ -16,6 +16,7 @@ child3.insertChild(700);
 child4.insertChild(500);
 child4.insertChild(600);
 child2_child.insertChild(1100);
+child2_child.insertChild(1300);
 
 // console.log("\n-----dfs traverse---");
 // Tree.traverse(tree, "  ");
