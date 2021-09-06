@@ -9,21 +9,19 @@ class Tree {
     return child;
   }
 
-  // Depth-First Traversal = dfs
-  // Breadth-First Traversal = bfs
-  // in-order = ino
-  // pre-order = pre
-  // post-order = pos
-  static traverse(tree, traverseType = "dfs", printFn = console.log) {
-    if (!tree) printFn("Empty Tree!!");
-    if (traverseType === "ino") traversePreOrder(tree);
+  // dfs
+  static traverse(tree, spacer = "-", printFn = console.log) {
+    if (!tree) printFn("Empty Tree");
+    printFn(spacer, tree);
+    spacer += spacer;
+    tree.children.forEach((child) => Tree.traverse(child, spacer, printFn));
   }
-
-  traversePreOrder(tree) {}
 
   contains(searchValue) {}
 
-  static size(tree) {}
+  static size(tree) {
+    return tree.children.length;
+  }
 
   static find(tree, value) {}
 
