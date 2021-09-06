@@ -3,6 +3,7 @@ class Tree {
     this.value = value;
     this.children = [];
   }
+
   insertChild(value) {
     const child = new Tree(value);
     this.children.push(child);
@@ -20,7 +21,15 @@ class Tree {
   contains(searchValue) {}
 
   static size(tree) {
-    return tree.children.length;
+    let size = 0;
+    Tree.traverse(tree, "", () => size++);
+    return size;
+  }
+
+  static depth(tree) {
+    if (!tree) return 0;
+    else if (tree.children.length === 0) return 1;
+    return 1 + Math.max(...tree.children.map((child) => Tree.depth(child)));
   }
 
   static find(tree, value) {}
