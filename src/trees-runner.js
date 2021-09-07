@@ -27,18 +27,21 @@ child2_child.insertChild(1300);
 // console.log(tree.remove(30));
 // console.log(tree);
 
-// console.log("\n-----dfs traverse---");
-// Tree.traverse(tree, "  ");
+console.log("\n-----dfs traverse---");
+Tree.traverse(tree, "  ");
+
+console.log("\n\n-----contains---\n");
+console.log(tree.contains(1100));
 
 // console.log("\n\n-----depth---\n", Tree.depth(tree));
 // console.log("\n\n-----size---\n", Tree.size(tree));
 
-const superTree = new Tree("a");
-const btree = superTree.insertChild("b");
-superTree.insertChild("c");
-btree.insertChild("ba");
-btree.insertChild("bd");
+// const superTree = new Tree("a");
+// const btree = superTree.insertChild("b");
+// superTree.insertChild("c");
+// btree.insertChild("ba");
+// btree.insertChild("bd");
 
-Tree.traverse(superTree, "----");
+// Tree.traverse(superTree, "----");
 
-console.log("\n\n---------depth-----------\n", Tree.depth(superTree));
+// console.log("\n\n---------depth-----------\n", Tree.depth(superTree));

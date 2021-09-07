@@ -11,14 +11,22 @@ class Tree {
   }
 
   // dfs
-  static traverse(tree, spacer = "-", printFn = console.log) {
-    if (!tree) printFn("Empty Tree");
-    printFn(spacer, tree);
+  static traverse(tree, spacer = "-", func = console.log) {
+    if (!tree) func("Empty Tree");
+    func(spacer, tree);
     spacer += spacer;
-    tree.children.forEach((child) => Tree.traverse(child, spacer, printFn));
+    tree.children.forEach((child) => Tree.traverse(child, spacer, func));
   }
 
-  contains(searchValue) {}
+  contains(searchValue) {
+    let result = false;
+    Tree.traverse(
+      this,
+      "",
+      (spacer, tree) => (result = result || searchValue === tree.value)
+    );
+    return result;
+  }
 
   static size(tree) {
     let size = 0;
