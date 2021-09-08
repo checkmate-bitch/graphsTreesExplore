@@ -40,9 +40,22 @@ class Tree {
     return 1 + Math.max(...tree.children.map((child) => Tree.depth(child)));
   }
 
-  static find(tree, value) {}
+  static find(tree, value) {
+    let node = null;
+    Tree.traverse(tree, "", (spacer, leaf) => {
+      if (leaf.value === value) {
+        return (node = leaf);
+      }
+    });
+    return node;
+  }
 
-  insert(parentTree, value) {}
+  insert(parentTree, value) {
+    let child = null;
+    let tree = Tree.find(this, parentTree.value);
+    if (tree) tree.insertChild(value);
+    return tree;
+  }
 
   remove(value) {
     if (this.value === value) {
