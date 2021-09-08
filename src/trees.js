@@ -51,7 +51,6 @@ class Tree {
   }
 
   insert(parentTree, value) {
-    let child = null;
     let tree = Tree.find(this, parentTree.value);
     if (tree) tree.insertChild(value);
     return tree;

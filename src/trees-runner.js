@@ -16,7 +16,7 @@ child3.insertChild(700);
 child4.insertChild(500);
 child4.insertChild(600);
 child2_child.insertChild(1100);
-child2_child.insertChild(1300);
+const child3_child2_child = child2_child.insertChild(1300);
 
 // console.log("\n-----dfs traverse---");
 // Tree.traverse(tree, "  ");
@@ -27,11 +27,18 @@ child2_child.insertChild(1300);
 // console.log(tree.remove(30));
 // console.log(tree);
 
-console.log("\n-----dfs traverse---");
-Tree.traverse(tree, "  ");
-
 console.log("\n\n-----contains---\n");
 console.log(tree.contains(1100));
+console.log("\n\n---------find-----------\n", Tree.find(tree, 40));
+console.log(
+  "\n\n---------insert-----------\n",
+  tree.insert(child3_child2_child, 1600)
+);
+console.log("\n\n---------insert-----------\n", tree.insert(child4, 800));
+console.log("\n\n---------depth-----------\n", Tree.depth(tree));
+
+console.log("\n-----dfs traverse---");
+Tree.traverse(tree, "  ");
 
 // console.log("\n\n-----depth---\n", Tree.depth(tree));
 // console.log("\n\n-----size---\n", Tree.size(tree));

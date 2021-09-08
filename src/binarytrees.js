@@ -51,6 +51,36 @@ class BinaryTree {
     if (this.right) this.right.inOrderTraversal(func);
     func(this.value);
   }
+
+  contains(val) {
+    let isContains = false;
+    this.inOrderTraversal((nodeVal) => {
+      if (val === nodeVal) isContains = true;
+    });
+    return isContains;
+  }
+
+  size() {
+    let size = 0;
+    this.inOrderTraversal(() => size++);
+    return size;
+  }
+
+  depth() {
+    if (!this) return 0;
+
+    return (
+      1 +
+      Math.max(
+        this.left ? this.left.depth() : 0,
+        this.right ? this.right.depth() : 0
+      )
+    );
+  }
+
+  remove(node) {}
+
+  reOrder(x, y) {}
 }
 
 export default BinaryTree;
