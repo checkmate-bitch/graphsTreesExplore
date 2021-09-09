@@ -64,7 +64,14 @@ class Tree {
     return this.children.splice(this.children.indexOf(child), 1);
   }
 
-  reorder(node1, node2) {}
+  reorder(node1Val, node2Val) {
+    let n1 = Tree.find(this, node1Val);
+    let n2 = Tree.find(this, node2Val);
+    if (!n1 || !n2) return false;
+    n1.value = node2Val;
+    n2.value = node2Val;
+    return true;
+  }
 }
 
 export default Tree;
