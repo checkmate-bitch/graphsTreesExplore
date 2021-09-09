@@ -13,6 +13,7 @@ btree.insertChild(13);
 btree.insertChild(12);
 btree.insertChild(14);
 btree.insertChild(11);
+btree.insertChild(22);
 
 console.log("\n-----------in-order traverse-------------\n");
 console.log(btree.inOrderTraversal());
@@ -21,7 +22,10 @@ console.log("\n-----------size-------------\n");
 console.log(btree.size());
 
 console.log("\n-----------contains-------------\n");
-console.log(btree.contains(15));
+console.log(btree.contains(20));
 
 console.log("\n-----------depth-------------\n");
 console.log(btree.depth());
+
+console.log("\n-----------leaf-------------\n");
+console.log(btree.countLeaves());

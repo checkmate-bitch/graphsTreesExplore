@@ -53,11 +53,20 @@ class BinaryTree {
   }
 
   contains(val) {
-    let isContains = false;
-    this.inOrderTraversal((nodeVal) => {
-      if (val === nodeVal) isContains = true;
-    });
-    return isContains;
+    /* code 1 */
+    // let isContains = false;
+    // this.inOrderTraversal((nodeVal) => {
+    //   if (val === nodeVal) isContains = true;
+    // });
+    // return isContains;
+
+    /* code 2 */
+    if (val === this.value) return true;
+    return (
+      (this.left && this.left.contains(val)) ||
+      (this.right && this.right.contains(val)) ||
+      false
+    );
   }
 
   size() {
@@ -78,7 +87,14 @@ class BinaryTree {
     );
   }
 
-  remove(node) {}
+  /* leaf = node without children */
+  countLeaves() {
+    if (!this.left && !this.right) return 1;
+    return (
+      (this.left ? this.left.countLeaves() : 0) +
+      (this.right ? this.right.countLeaves() : 0)
+    );
+  }
 
   reOrder(x, y) {}
 }
