@@ -95,8 +95,6 @@ class BinaryTree {
       (this.right ? this.right.countLeaves() : 0)
     );
   }
-
-  reOrder(x, y) {}
 }
 
 export default BinaryTree;
