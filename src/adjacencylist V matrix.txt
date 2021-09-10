@@ -1,0 +1,3 @@
+Graph can be represented by 
+1. Adjacency List
+2. Adjacency Matrix
