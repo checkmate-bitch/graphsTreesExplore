@@ -1,3 +1,52 @@
 Graph can be represented by 
 1. Adjacency List
-2. Adjacency Matrix
+    eg: Graph like 
+
+    1 ---------- 2
+    |            |
+    |            |
+    |            |
+    3 ---------- 4
+
+    adj list:
+
+    -----
+    | 1 | -> 2 -> 3   
+    -----
+
+    -----
+    | 2 | -> 4 -> 1   
+    -----
+    
+    -----
+    | 3 | -> 4 -> 1
+    -----
+    
+    -----
+    | 4 | -> 2 -> 3   
+    -----
+    
+     --------
+    | vertex | -> edges   
+     --------
+    
+    edges can be represented using array or linked list
+
+    const adjList = {
+        1: [2, 3],
+        2: [4, 1],
+        3: [4, 1],
+        4: [2, 3],
+    } 
+
+
+
+2. Adjacency Matrix: Matrix that shows using 0s and 1s whether vertex are connected (have edges) 
+
+    matrix: can be represented in coding as 2d array
+    
+    x   1   2   3   4
+    1   0   1   1   0
+    2   1   0   0   1
+    3   1   0   0   1
+    4   0   4   1   0
